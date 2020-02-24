@@ -1,3 +1,4 @@
+//const mysql = require("../../node_modules/mysql/index.js");
 const mysql = require("mysql");
 const fs = require("fs");
 const ejs = require("ejs");
@@ -24,7 +25,16 @@ const input = JSON.parse(
 console.log(input);
 // Object containing actual coords of dep/arrival location
 
-function resultList() {
+function initMap() {
+    var klcc = { lat: 3.1579, lng: 101.712 };
+    // The map, centered at Uluru
+    var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 7,
+        center: klcc
+    });
+    resultList(map);
+}
+function resultList(map) {
   var dbTable;
   // connect to mysql database (clearDB)
   var sqlConnection = mysql.createPool({
@@ -53,5 +63,5 @@ function resultList() {
       console.log('Selecteddata: ', results);
     }
   });
-  initSceneMap(dbTable);
+  displayFlags(dbTable,map);
 }

@@ -1,14 +1,4 @@
 
-function initSceneMap(dbTable) {
-  var klcc = { lat: 3.1579, lng: 101.712 };
-  // The map, centered at Uluru
-  var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 7,
-    center: klcc
-  });
-  displayFlags(dbTable, map);
-}
-
 function displayFlags(db, map) {
   db.collection("scenes")
     .get()

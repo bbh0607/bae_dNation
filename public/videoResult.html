@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,16 +13,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script src="js/mysqldb.js"></script>
+    <script src="js/bundle.js"></script> <!--browserify js/mysqldb.js to use function "require"-->
     <script src="js/sceneMap.js"></script>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrWfgV41mN7o4RwKS3-bCKLa9H0J7IVfk&libraries=places&callback=resultList"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrWfgV41mN7o4RwKS3-bCKLa9H0J7IVfk&libraries=places&callback=initMap"
       async
       defer
     ></script>
     <title>Video Results</title>
   </head>
   <body>
+
     <div class="split left">
       <p class="options">
         <span class="are">Your </span>options <span class="are">are:</span>
