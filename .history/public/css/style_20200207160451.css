@@ -1,0 +1,85 @@
+/* body {
+  background-color: aquamarine;
+} */
+
+@import url(https://fonts.googleapis.com/css?family=Patua+One);
+
+h1 {
+  font-family: 'Hammersmith One', 'sans-serif';
+}
+
+body {
+  background-color:#35B9C5;
+  align-content: center;
+}
+
+label {
+  font-size: 20px;
+  font-family: "Fira Sans", sans-serif;
+  margin-right: 10px;
+}
+
+ul {
+  list-style-type: none;
+  justify-self: center;
+  margin-left: 200px;
+}
+
+li {
+  margin-top: 20px;
+}
+
+select {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+input[type="submit"]{
+  background-color: #c66;
+  color: #fff;
+  font-size: 20px;
+  font-family: 'Patua One', cursive;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+input[type="time"], input[type="number"]{
+  width: 120px;
+  text-align: center;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  width: 350px;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 18px;
+  margin-right: 10px;
+  padding-left: 10px;
+}
+
+small {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 14px;  
+}
+
+input[type='number']::-webkit-inner-spin-button, 
+input[type='number']::-webkit-outer-spin-button { 
+    opacity: 1;
+}
+
+input[type='time']::-webkit-inner-spin-button, 
+input[type='time']::-webkit-outer-spin-button { 
+    opacity: 1;
+}
+
+.icon{
+  margin-right: 5px;
+}
+
+div {
+  margin-top: 10px;
+  margin-bottom: 20px
+}

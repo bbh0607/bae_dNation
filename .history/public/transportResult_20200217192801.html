@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./css/transport.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Hammersmith+One"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="js/initMap.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <script src="js/database.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrWfgV41mN7o4RwKS3-bCKLa9H0J7IVfk&libraries=places&callback=calcFare"
+      async
+      defer
+    ></script>
+    <title>My Results</title>
+  </head>
+  <body>
+    <div class="split left">
+      <p class="options">
+        <span class="are">Your </span>options <span class="are">are:</span>
+      </p>
+      <ul id="resultPage">
+        <li class="list">
+          <span class="title">
+            <i class="fa fa-bus icon"></i><span class="mode">bus</span></span
+          ><span class="numerics"
+            ><i class="fa fa-clock-o icon"></i
+            ><span class="duration fee" id="busTime"></span
+            ><span class="fee" id="bus"></span
+          ></span>
+        </li>
+        <li class="list">
+          <span class="title"
+            ><i class="fa fa-train icon"></i
+            ><span class="mode">train</span></span
+          ><span class="numerics"
+            ><i class="fa fa-clock-o icon"></i
+            ><span class="duration fee" id="trainTime"></span
+            ><span class="fee" id="train"></span
+          ></span>
+          <p class="under" id="trainWarning" hidden>
+            <i class="fa fa-exclamation-circle"></i
+            ><span class="warn"
+              >Use Grab at a discounted rate with the current Grab Package!
+              (Grab fare & time are excluded from the displayed price)</span
+            >
+          </p>
+        </li>
+        <li class="list">
+          <span class="title">
+            <i class="fa fa-taxi icon"></i><span class="mode">taxi</span></span
+          ><span class="numerics"
+            ><i class="fa fa-clock-o icon"></i
+            ><span class="duration fee" id="taxiTime"></span
+            ><span class="fee" id="taxi"></span
+          ></span>
+          <p class="under" id="taxiWarning" hidden>
+            <i class="fa fa-exclamation-circle"></i
+            ><span class="warn"
+              >For taxis, an additional fee of $5 apply for KLIA/KLIA2
+              departures.</span
+            >
+          </p>
+        </li>
+        <li class="list">
+          <span class="title"
+            ><i class="fa fa-star icon"></i
+            ><span class="mode">VIP limo</span></span
+          ><span class="numerics"
+            ><i class="fa fa-clock-o icon"></i
+            ><span class="duration fee" id="vipTime"></span
+            ><span class="fee" id="vip"></span
+          ></span>
+        </li>
+        <li class="list">
+          <span class="title"
+            ><i class="fa fa-hand-paper-o icon"></i
+            ><span class="mode">grab</span></span
+          ><span class="numerics"
+            ><i class="fa fa-clock-o icon"></i
+            ><span class="duration fee" id="grabTime"></span
+            ><span class="fee" id="grab"></span
+          ></span>
+          <p class="under" id="grabWarning">
+            <i class="fa fa-exclamation-circle"></i
+            ><span class="warn"
+              >The displayed fee is an estimate for GrabCar Budget. Additional
+              fees may apply.</span
+            >
+          </p>
+        </li>
+      </ul>
+      <h2 id="also">Nearby:</h2>
+      <div>
+        <div style="width: 60%; height: 11rem; float:left" id="nearbyImg">
+          <a href><img
+            id="img"
+            style="max-width:100%;
+                  max-height:100%;"
+          />
+        </div>
+        <div
+          id="nearbyTitle"
+        ></div>
+      </div>
+    </div>
+    <div class="split right">
+      <div id="map"></div>
+    </div>
+  </body>
+</html>

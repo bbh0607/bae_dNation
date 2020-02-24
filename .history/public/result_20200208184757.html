@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./css/transport.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Hammersmith+One"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="js/calcFare.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrWfgV41mN7o4RwKS3-bCKLa9H0J7IVfk&libraries=places&callback=calcFare"
+      async
+      defer
+    ></script>
+    <title>My Results</title>
+  </head>
+  <body>
+    <div class="tab">
+      <button class="tablinks" onclick="openPage(event, 'index')">
+        Transportation
+      </button>
+      <button class="tablinks" onclick="openPage(event, 'video')">
+        Video Search
+      </button>
+    </div>
+    <div class="split left">
+      <p class="options">
+        <span class="are">Your </span>options <span class="are">are:</span>
+      </p>
+      <ul id="resultPage">
+        <li class="resu"><img class="thumbnail" src="https://paul-kang-storage.s3.amazonaws.com/icon_src/bus.png"><span class="mode">bus</span><span id="vip"></span></li>
+        <li class="resu"><img class="thumbnail" src="https://paul-kang-storage.s3.amazonaws.com/icon_src/train.png"><span class="mode">train</span><span id="vip"></span></li>
+        <li class="resu"><img class="thumbnail" src="https://paul-kang-storage.s3.amazonaws.com/icon_src/taxi.png"><span class="mode">taxi</span><span id="res"></span></li>
+        <li class="resu"><img class="thumbnail" src="https://paul-kang-storage.s3.amazonaws.com/icon_src/vip.png"><span class="mode">VIP Limo</span><span id="vip"></span></li>
+      </ul>
+      <!-- <h2>Taxi</h2>
+      <div id="res"></div>
+      <h2>VIP Service</h2> -->
+    </div>
+    <div class="split right"></div>
+  </body>
+</html>

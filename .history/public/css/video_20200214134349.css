@@ -1,0 +1,17 @@
+#videoSearch {
+  margin-top: 15vh;
+}
+
+#searchIcon {
+  float: left;
+  margin-right: -20px;
+  margin-left: 15px;
+  margin-top: 2px;
+  position: relative;
+  z-index: 2;
+  color: #75757D
+}
+
+#textSearch{
+    width: 2
+}

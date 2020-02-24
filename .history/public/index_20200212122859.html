@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Hammersmith+One"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <?xml version="1.0" encoding="UTF-8"?>
+    <script src="js/script.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrWfgV41mN7o4RwKS3-bCKLa9H0J7IVfk&libraries=places&callback=initMap"
+      async
+      defer
+    ></script>
+
+    <title>Search</title>
+  </head>
+  <div class="screen" id="form">
+    <div class="tab">
+      <button class="tablinks" onclick="window.location.href='./video.html'">
+        Transportation
+      </button>
+      <button class="tablinks" onclick="openPage(event, 'video')">
+        Video Search
+      </button>
+    </div>
+    <img id="logo" src="https://paul-kang-storage.s3.amazonaws.com/icon_src/travel+dnation+1.png">
+    <p class="detail">Where <span class="name">do you want to go?</span> </p>
+    <form
+      action="result.html"
+      method="GET"
+      onkeydown="return event.key != 'Enter';"
+      onsubmit="return validateForm()"
+      autocomplete="off"
+    >
+      <ul id="indexPage">
+        <li>
+          <label for="from">From:</label>
+          <select
+            id="fromSelect"
+            name="from"
+            onchange="handleChange(this)"
+            required
+            onclick="setPrev(this)"
+          >
+            <option value="DEFAULT" selected disabled hidden
+              >Choose your point of departure</option
+            >
+            <option value="KLIA">KLIA (KL International Airport)</option>
+            <option value="KLIA2">KLIA2 (Airport Terminal 2)</option>
+            <option value="SENTRAL">KL Sentral</option>
+            <option value="OTHER">Other..</option>
+          </select>
+          <div id="fromSearch" hidden>
+            <i class="fa fa-search icon"></i>
+            <input
+              type="text"
+              id="address"
+              name="fromSearch"
+              placeholder="Where would you like to start?"
+            />
+          </div>
+        </li>
+        <li>
+          <label for="to">To:</label>
+          <select
+            id="toSelect"
+            name="to"
+            onchange="handleChange(this)"
+            onclick="setPrev(this)"
+            disabled
+            required
+          >
+            <option value="DEFAULT" selected disabled hidden
+              >Choose your point of arrival</option
+            >
+            <option value="KLIA">KLIA (KL International Airport)</option>
+            <option value="KLIA2">KLIA2 (Airport Terminal 2)</option>
+            <option value="SENTRAL">KL Sentral</option>
+            <option value="OTHER">Other..</option>
+          </select>
+          <div id="toSearch" hidden>
+            <i class="fa fa-search icon"></i>
+            <input
+              type="text"
+              id="destination"
+              name="toSearch"
+              placeholder="Where would you like to go?"
+            />
+          </div>
+        </li>
+        <li>
+          <label for="deptime">Departing:</label>
+          <input
+            type="time"
+            id="deptime"
+            name="deptime"
+            value="09:00"
+            required
+          />
+        </li>
+        <li>
+          <label for="adult">Adult:</label>
+          <input
+            type="number"
+            id="adult"
+            name="adult"
+            value="1"
+            min="1"
+            required
+          />
+        </li>
+        <li>
+          <label for="child">Child:</label>
+          <input
+            type="number"
+            id="child"
+            name="child"
+            value="0"
+            min="0"
+            required
+          />
+        </li>
+        <li>
+          <small>(Applicable for age 6-15)</small>
+        </li>
+        <li id="submit">
+          <input type="submit" value="Search" onclick="makeJson()" />
+        </li>
+      </ul id>
+    </form>
+  </div>
+  <
+</html>

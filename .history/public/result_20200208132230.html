@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="./css/transport.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Hammersmith+One"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="js/calcFare.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrWfgV41mN7o4RwKS3-bCKLa9H0J7IVfk&libraries=places&callback=calcFare"
+      async
+      defer
+    ></script>
+    <title>My Results</title>
+  </head>
+  <body>
+    <p class="detail">options <span class="name">are</span> </p>
+    <h2>Taxi Service</h2>
+    <div id="res"></div>
+    <input type="checkbox" id="vip" name="vip" onclick="setVip()" />
+    <label for="vip">VIP Service</label>
+  </body>
+</html>

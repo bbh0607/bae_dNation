@@ -1,0 +1,68 @@
+span.are {
+  font-family: "Hammersmith One", "sans-serif";
+  color: #35b9c5;
+  font-size: 1.5rem;
+  margin-top: 3rem;
+}
+
+p.options {
+  font-family: "Hammersmith One", "sans-serif";
+  color: #d687e3;
+  font-size: 1.5rem;
+  margin-bottom: 1vh;
+}
+
+/* Split the screen in half */
+.split {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 40px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: #fff;
+  width: 30%;
+  padding-left: 30px;
+  padding-right: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: blueviolet;
+  width: 70%;
+}
+
+h2 {
+  font-family: "Hammersmith One", "sans-serif";
+  font-size: 20px;
+}
+
+.mode {
+  font-family: "Hammersmith One", "sans-serif";
+  font-size: 1.2rem;
+  width: 3rem;
+}
+
+#resultPage {
+  margin-left: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.thumbnail {
+  max-width: 20%;
+  height: auto;
+  vertical-align: middle;
+} 
+
+.icon {
+    width: auto;
+    margin-right: 1rem;
+}
+

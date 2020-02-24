@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Fira+Sans"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="js/calcFare.js"></script>
+    <!-- <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrWfgV41mN7o4RwKS3-bCKLa9H0J7IVfk&libraries=places&callback=calcFare"
+            async defer></script>    -->
+    <title>My Results</title>
+  </head>
+  <body>
+    <h1>results</h1>
+    <h2>Taxi Service</h2>
+    <div id="result"></div>
+    <div id="coords"></div>
+    <script>
+      var urlParams = new URLSearchParams(location.search);
+      var search = location.search.substring(1);
+      var x = JSON.parse(
+        '{"' + search.replace(/&/g, '","').replace(/=/g, '":"') + '"}',
+        function(key, value) {
+          return key === "" ? value : decodeURIComponent(value);
+        }
+      );
+      console.log(x)
+      //   var entries = urlParams.entries();
+      //   for (pair of entries) {
+      //     console.log(pair[0], pair[1]);
+      //   }
+      //   document.getElementById("result").innerText = location.search;
+      var coordinates = JSON.parse(localStorage["geoInfoJson"]);
+      //   document.getElementById("coords").innerText = coordinates.to.lat;
+    </script>
+  </body>
+</html>

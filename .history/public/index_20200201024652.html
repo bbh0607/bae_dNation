@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans">
+    <script src="js/script.js"></script>
+    <title>My Website</title>
+  </head>
+  <body>
+    <h1>Forms of Transportation</h1>
+    <form action="result.html" method="POST">
+      <ul>
+        <li>
+          <label for="from">From</label>
+          <select id="fromSelect" name="from" onchange="removeDuplicate(this)" required>
+            <option value="DEFAULT" selected disabled hidden>Choose your place of departure</option>
+            <option value="KLIA">KLIA (KL International Airport)</option>
+            <option value="KLIA2">KLIA2 (Airport Terminal 2)</option>
+            <option value="SENTRAL">KL Sentral</option>
+            <option value="OTHER">Other..</option>
+          </select>
+          <label for="to">To</label>
+          <select id="toSelect" name="to" onchange="removeDuplicate(this)" disabled required>
+            <option value="DEFAULT" selected disabled hidden>Choose your place of arrival</option>
+            <option value="KLIA">KLIA (KL International Airport)</option>
+            <option value="KLIA2">KLIA2 (Airport Terminal 2)</option>
+            <option value="SENTRAL">KL Sentral</option>
+            <option value="OTHER">Other..</option>
+          </select>
+        </li>
+        <li>
+          <label for="appt">Time of Departure:</label>
+          <input type="time" id="appt" name="time" value="09:00" required>
+        </li>
+        <li>
+          <input type="submit" value="Search">
+        </li>
+      </ul>
+    </form a>
+  </body>
+</html>

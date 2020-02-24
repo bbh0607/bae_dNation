@@ -1,0 +1,28 @@
+{
+  "name": "nodejsdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "watch": "watchify ./public/js/dropbox.js -o ./public/js/bundle.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "dropbox": "^4.0.30",
+    "express": "^4.17.1",
+    "firebase": "^7.8.2",
+    "heroku": "^7.38.1",
+    "joi": "^14.3.1",
+    "nodemon": "^2.0.2",
+    "query-string": "^6.10.1",
+    "watchify": "^3.11.1"
+  },
+  "nodemonConfig": {
+    "ext": "js, ts, css, html, json"
+  }
+}

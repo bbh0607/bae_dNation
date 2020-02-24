@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Fira+Sans"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrWfgV41mN7o4RwKS3-bCKLa9H0J7IVfk&libraries=places&callback=calcFare"
+            async defer></script>   
+    <title>My Results</title>
+  </head>
+  <body>
+    <h1>results</h1>
+    <span id="result"></span>
+    <script>
+      var geoInfo = JSON.parse(localStorage["geoInfoJson"]);
+      document.getElementById("result").innerText = geoInfo.from.lat;
+    </script>
+  </body>
+</html>

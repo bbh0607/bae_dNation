@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Welcome!</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Hammersmith+One"
+    />
+    <link rel="stylesheet" href="./css/home.css" />
+    <script src="js/openPage.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div class="tab">
+      <button class="tablinks" onclick="openPage('transport')">
+        Transportation
+      </button>
+      <button class="tablinks" onclick="openPage('video')">
+        Video Search
+      </button>
+    </div>
+    <iframe class="main" id="transport" src="./transport.html"></iframe>
+    <iframe
+      class="main"
+      id="video"
+      src="./video.html"
+      style="display:none"
+    ></iframe>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
+    
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCNg9f1hBieClZtldbdxtM5oK-Aanx6ZCE",
+        authDomain: "travel-dnation-kangws.firebaseapp.com",
+        databaseURL: "https://travel-dnation-kangws.firebaseio.com",
+        projectId: "travel-dnation-kangws",
+        storageBucket: "travel-dnation-kangws.appspot.com",
+        messagingSenderId: "378843992848",
+        appId: "1:378843992848:web:505e12451c413f1e164b95",
+        measurementId: "G-NFY4VHW9XP"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
+</html>

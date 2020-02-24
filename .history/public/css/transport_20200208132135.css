@@ -1,0 +1,13 @@
+span.name {
+  font-family: "Hammersmith One", "sans-serif";
+  color: #35b9c5;
+  font-size: 30px;
+}
+
+p.detail {
+  font-family: "Hammersmith One", "sans-serif";
+  color: #d687e3;
+  font-size: 30px;
+  margin-bottom:  1vh;
+  margin-top: 2.5vh;
+}

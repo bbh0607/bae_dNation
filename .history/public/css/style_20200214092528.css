@@ -1,0 +1,112 @@
+
+span.name {
+  font-family: "Hammersmith One", "sans-serif";
+  color: #35b9c5;
+  font-size: 3rem;
+}
+
+p.detail {
+  font-family: "Hammersmith One", "sans-serif";
+  color: #d687e3;
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  margin-top: 0;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+label {
+  font-size: 1.25rem;
+  font-family: "Hammersmith One", "sans-serif";
+  width: 7rem;
+  display: inline-block;
+}
+
+ul {
+  list-style-type: none;
+  display: block;
+}
+
+li {
+  margin-top: 1.5rem;
+}
+
+select {
+  font-family: "Hammersmith One", "sans-serif";
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  width: 20rem;
+  display: inline-block;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  border-color: #ffffff;
+  padding: 2px 5px; 
+}
+
+input {
+  background-color: #f0f0f0;
+}
+
+input[type="submit"] {
+  background-color: #35b9c5;
+  color: #fff;
+  font-size: 20px;
+  font-family: "Hammersmith One", "sans-serif";
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  border-width: 0px;
+}
+
+input[type="time"],
+input[type="number"],
+input[type="text"] {
+  width: 19.5rem;
+  text-align: center;
+  font-family: "Hammersmith One", "sans-serif";
+  font-size: 1rem;
+  margin-right: 10px;
+  border-radius: 5px;
+  border-width: 0px;
+  padding-left: 10px;
+}
+
+small {
+  font-family: "Hammersmith One", "sans-serif";
+  font-size: 14px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+input[type="time"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+i {
+  width: 110px;
+}
+
+/* div {
+  margin-top: 10px;
+  margin-bottom: 20px;
+} */
+
+#logo {
+  max-width: 25%;
+  height: auto;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+#submit {
+  text-align: center;
+}

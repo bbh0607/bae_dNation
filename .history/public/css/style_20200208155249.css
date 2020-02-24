@@ -1,0 +1,163 @@
+@import url(https://fonts.googleapis.com/css?family=Patua+One);
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #effdff;
+  width: 100vw;
+  margin: 0;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.75rem;
+  width: 50vw;
+  transition: 0.3s;
+  font-family: "Hammersmith One", "sans-serif";
+  font-size: 1.25rem;
+  color: #35b9c5;
+  border-left: 1px solid #e8e8e8;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ffffff;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 1rem 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  background-color: #effdff;
+}
+
+span.name {
+  font-family: "Hammersmith One", "sans-serif";
+  color: #35b9c5;
+  font-size: 7vh;
+}
+
+p.detail {
+  font-family: "Hammersmith One", "sans-serif";
+  color: #d687e3;
+  font-size: 7vh;
+  margin-bottom: 1vh;
+  margin-top: 2.5vh;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+label {
+  font-size: 20px;
+  font-family: "Hammersmith One", "sans-serif";
+  width: 110px;
+  display: inline-block;
+}
+
+ul {
+  list-style-type: none;
+  display: block;
+}
+
+li {
+  margin-top: 20px;
+}
+
+select {
+  font-family: "Hammersmith One", "sans-serif";
+  font-size: 18px;
+  margin-right: 10px;
+  width: 300px;
+  display: inline-block;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  border-color: #ffffff;
+  padding: 2px 5px;
+}
+
+input {
+  background-color: #f0f0f0;
+}
+
+input[type="submit"] {
+  background-color: #35b9c5;
+  color: #fff;
+  font-size: 20px;
+  font-family: "Hammersmith One", "sans-serif";
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  border-width: 0px;
+}
+
+input[type="time"],
+input[type="number"] {
+  width: 300px;
+  text-align: center;
+  font-family: "Hammersmith One", "sans-serif";
+  font-size: 18px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border-width: 0px;
+  padding-left: 10px;
+}
+
+input[type="text"] {
+  width: 285px;
+  font-family: "Hammersmith One", "sans-serif";
+  font-size: 18px;
+  margin-right: 10px;
+  padding-left: 10px;
+}
+
+small {
+  font-family: "Hammersmith One", "sans-serif";
+  font-size: 14px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+input[type="time"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.icon {
+  width: 110px;
+}
+
+div {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#logo {
+  max-width: 25%;
+  height: auto;
+  margin-top: 15px;
+}
+
+#submit {
+  text-align: center;
+}

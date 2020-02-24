@@ -1,0 +1,10 @@
+.main{
+    width: 100vh;
+    height: 90vh;
+    border: none;
+    display:block;
+}
+
+body{
+    margin: 0;
+}

@@ -1,0 +1,18 @@
+function removeDuplicate(element) {
+    const changedId = element.id;
+    const comparisonId = changedId == 'fromSelect'? 'toSelect': 'fromSelect';
+    const changed = document.getElementById(changedId);
+    const compare = document.getElementById(comparisonId);
+    const displayId = changedId == "fromSelect" ? "fromSearch" : "toSearch";
+
+    console.log()
+    if (
+      changed.options[changed.selectedIndex].value ===
+      compare.options[compare.selectedIndex].value
+    ) {
+        //if ()
+        compare.value="DEFAULT"
+    }
+    display.hidden = !(changed.value == "OTHER" || compare.value =="OTHER") 
+    document.getElementById(comparisonId).disabled = false;
+}

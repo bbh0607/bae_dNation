@@ -1,0 +1,26 @@
+{
+  "name": "nodejsdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "heroku": "^7.38.1",
+    "joi": "^14.3.1",
+    "mongodb": "^3.5.2",
+    "mongoose": "^5.8.10",
+    "nodemon": "^2.0.2",
+    "query-string": "^6.10.1"
+  },
+  "nodemonConfig": {
+    "ext": "js, ts, css, html, json"
+  }
+}

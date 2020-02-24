@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./css/transport.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Hammersmith+One"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="js/calcFare.js"></script>
+    <script src="js/klEkspres.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrWfgV41mN7o4RwKS3-bCKLa9H0J7IVfk&libraries=places&callback=calcFare"
+      async
+      defer
+    ></script>
+    <title>My Results</title>
+  </head>
+  <body>
+    <div class="tab">
+      <button class="tablinks" onclick="openPage(event, 'index')">
+        Transportation
+      </button>
+      <button class="tablinks" onclick="openPage(event, 'video')">
+        Video Search
+      </button>
+    </div>
+    <div class="split left">
+      <p class="options">
+        <span class="are">Your </span>options <span class="are">are:</span>
+      </p>
+      <ul id="resultPage">
+        <li class="list">
+          <i class="fa fa-bus icon"></i><span class="mode">bus</span
+          ><span class="numerics"
+            ><i class="fa fa-clock-o icon"></i
+            ><span class="duration fee">1h 30m</span
+            ><span class="fee" id="bus"></span
+          ></span>
+        </li>
+        <li class="list">
+          <i class="fa fa-train icon"></i><span class="mode">train</span
+          ><span class="numerics"
+            ><i class="fa fa-clock-o icon"></i
+            ><span class="duration fee">1h 30m</span
+            ><span class="fee" id="train"></span
+          ></span>
+        </li>
+        <li class="list">
+          <i class="fa fa-taxi icon"></i><span class="mode">taxi</span
+          ><span class="numerics"
+            ><i class="fa fa-clock-o icon"></i
+            ><span class="duration fee" id="taxiTime"></span
+            ><span class="fee" id="taxi"></span
+          ></span>
+        </li>
+        <li class="list">
+          <i class="fa fa-star icon"></i><span class="mode">VIP limo</span
+          ><span class="numerics"
+            ><i class="fa fa-clock-o icon"></i
+            ><span class="duration fee" id="vipTime"></span
+            ><span class="fee" id="vip"></span
+          ></span>
+        </li>
+        <li class="list">
+          <i class="fa fa-hand-paper-o icon"></i><span class="mode">VIP limo</span
+          ><span class="numerics"
+            ><i class="fa fa-clock-o icon"></i
+            ><span class="duration fee" id="vipTime"></span
+            ><span class="fee" id="vip"></span
+          ></span>
+        </li>
+      </ul>
+      <span>also available with</span>
+    </div>
+    <div class="split right">
+      <div id="map"></div>
+    </div>
+  </body>
+</html>
