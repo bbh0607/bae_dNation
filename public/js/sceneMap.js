@@ -1,5 +1,7 @@
+const variable = 10;
 
-function displayFlags(db, map) {
+
+function displayFlag(db, map) {
   db.collection("scenes")
     .get()
     .then(snapshot => {

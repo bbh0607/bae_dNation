@@ -62,6 +62,13 @@ html {
   text-align: left;
 }
 
+#planPage {
+    margin-left: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+}
+
 .thumbnail {
   max-width: 20%;
   height: auto;
@@ -124,11 +131,26 @@ html {
   width: 90px;
 }
 
-#nearbyTitle {
-  width: 35%;
-  height: 11rem;
-  float: right;
-  font-family: "Hammersmith One", "sans-serif";
-  font-size: 0.9rem;
-  padding-left: 0.5rem
+.plan button {
+    border: none;
+    padding: 0px;
+    background: #ffffff;
+}
+
+.plantitle {
+    width: 35%;
+    height: 8rem;
+    float:right;
+    font-family: "Hammersmith One", "sans-serif";
+    font-size: 0.9rem;
+    padding-left: 0.5rem
+}
+
+dialog{
+    padding:0px;
+    border:none;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.2);
 }

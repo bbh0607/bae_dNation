@@ -38398,7 +38398,8 @@ const ejs = require("ejs");
 //app.use(express.session());
 //app.use(app.router);
 
-const search = location.search.substring(1);
+    const search = location.search.substring(1);
+    console.log(search);
 // Object containing input made by user
 const input = JSON.parse(
   '{"' + search.replace(/&/g, '","').replace(/=/g, '":"') + '"}',
@@ -38408,6 +38409,25 @@ const input = JSON.parse(
 );
 console.log(input);
 // Object containing actual coords of dep/arrival location
+  //(function () {
+  //      var s = document.createElement('script');
+  //     s.async = true;
+  //      s.src = ' https://maps.googleapis.com/maps/api/js?key=AIzaSyDrWfgV41mN7o4RwKS3-bCKLa9H0J7IVfk&libraries=places';
+  //      var x = document.getElementsByTagName('script')[0];
+  //      x.parentNode.insertBefore(s, x);
+  //})();
+
+//function initMap() {
+    //var klcc = { lat: 3.1579, lng: 101.712 };
+    // The map, centered at Uluru
+    //var map //= new google.maps.Map(document.getElementById("map"), {
+     //   zoom: 7,
+     //   center: klcc
+    //});
+    
+    console.log("in the function");
+   // resultList(map);
+//}
 
 function resultList() {
   var dbTable;
@@ -38417,6 +38437,7 @@ function resultList() {
     host: "us-cdbr-iron-east-04.cleardb.net",
     user: "b4eb1d5633570c",
     password: "2a2186ca",
+    port: "3306",
     database: "heroku_9b8a67f78720fcc"
   });
   sqlConnection.connect(function(err) {
@@ -38438,7 +38459,7 @@ function resultList() {
       console.log('Selecteddata: ', results);
     }
   });
-  initSceneMap(dbTable);
+  //displayFlags(dbTable,map);
 }
 
 },{"ejs":169,"fs":1,"mysql":174}]},{},[245]);

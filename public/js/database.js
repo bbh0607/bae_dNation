@@ -10,12 +10,18 @@ function initFirestore(map) {
     appId: "1:378843992848:web:505e12451c413f1e164b95",
     measurementId: "G-NFY4VHW9XP"
   };
-  firebase.initializeApp(firebaseConfig);
-  let db = firebase.firestore();
-  displayFlags(db, map);
-  ekspresTime(db);
-  calcTrainFare();
+    firebase.initializeApp(firebaseConfig);
+    let db = firebase.firestore();
+    displayFlags(db, map);
+    ekspresTime(db);
+    calcTrainFare();
 }
+
+function loadVideo(link, time) {
+    //player.loadVideoById(Id, time,"default")
+    player.loadVideoByUrl(link,time,"default")
+    document.getElementById("myDialog").showModal();
+} 
 
 function displayFlags(db, map) {
   db.collection("scenes")
@@ -42,7 +48,7 @@ function displayFlags(db, map) {
         // let image = doc.data().scene_img.replace("dl=0","raw=1");
         var icon = {
           url: doc.data().scene_img.replace("dl=0","raw=1"),
-          scaledSize: new google.maps.Size(120, 90), // scaled size
+          //scaledSize: new google.maps.Size(120, 90), // scaled size
           origin: new google.maps.Point(0, 0), // origin
           anchor: new google.maps.Point(0, 0) // anchor
         };
@@ -52,17 +58,12 @@ function displayFlags(db, map) {
           map: map,
           icon: icon
         });
-        google.maps.event.addListener(marker, "click", function() {
-          window.open(
-            "http://www.youtube.com/watch?v=" +
-              doc.data().video_id +
-              "&t=" +
-              min +
-              "m" +
-              sec +
-              "s",
-            "_blank"
-          );
+          google.maps.event.addListener(marker, "click", function () {
+              var time = min * 60 + sec;
+              var video_link = "http://www.youtube.com/v/"
+                  + doc.data().video_id
+                  + "?version=3";
+              loadVideo(video_link,time);
         });
       });
     })
@@ -70,28 +71,14 @@ function displayFlags(db, map) {
       console.log("Error getting documents", err);
     });
 
-  //temporary placeholder image for UI
-  let docRef = db.collection("videos").doc("lAubSXG1ETRJrio6uZN6");
-
-  docRef
-    .get()
-    .then(function(doc) {
-      if (doc.exists) {
-        document.getElementById("nearbyTitle").innerText = doc.data().title;
-        var image = document.getElementById("img");
-        image.src =
-          "https://img.youtube.com/vi/" + doc.data().video_id + "/0.jpg";
-        document.getElementById("link").href =
-          "http://www.youtube.com/watch?v=" + doc.data().video_id;
-      } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-      }
-    })
-    .catch(function(error) {
-      console.log("Error getting document:", error);
-    });
 }
+
+/*function escClose(evt) {
+    console.log(evt.keyCode);
+    if (evt.keyCode == 27 && document.getElementById("myDialog").open) {
+        player.pauseVideo()
+    }
+}*/
 
 function ekspresTime(db) {
   const [fromID, toID] = stationID([result.from, result.to]);

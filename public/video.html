@@ -1,37 +1,32 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js">
+<html lang="en">
   <!--<![endif]-->
-  <head>
+<head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="" />
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge" />-->
+    <title>Search</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <link rel="stylesheet" type="text/css" href="./css/video.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Hammersmith+One"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <?xml version="1.0" encoding="UTF-8"?>
-    <script src="js/script.js"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrWfgV41mN7o4RwKS3-bCKLa9H0J7IVfk&libraries=places&callback=initMap"
-      async
-      defer
-    ></script>
-    <title>Search</title>
-  </head>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Hammersmith+One" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <!--<script src="js/script.js"></script>-->
+    <!--<script 
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrWfgV41mN7o4RwKS3-bCKLa9H0J7IVfk&libraries=places&callback=initMap"
+            async
+            defer
+     ></script>-->
+
+</head>
   <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">
@@ -45,8 +40,8 @@
     />
     <p class="detail">Whatever <span class="name">you're looking for,</span></p>
     <form
-      action="videoResult.html"
-      method="GET"
+      action=""
+      method="get"
       autocomplete="off"
     >
       <div id="videoSearch">
@@ -59,8 +54,12 @@
        <span class="fa fa-search icon" id="searchIcon"></span>
        <div id="submitContainer">
          <input type="submit" value="Search" />
+          <!--<input type="submit" class="ajaxsend" value="Search"/>-->
        </div>
       </div>
-    </form>
+    </form>      
+
+      <!--<script src="js/ajaxSend.js"></script>-->
+
   </body>
 </html>
