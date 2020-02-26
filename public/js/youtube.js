@@ -13,9 +13,9 @@ function onYouTubeIframeAPIReady() {
         height: '480',
         width: '853',
         videoId: 'M7lc1UVf-VE',
-        /*playerVars: {
-            'autoplay': 1
-        }*/
+        playerVars: {
+            'origin' : 'https://dnationbae.herokuapp.com/public/transportResult.html'
+        }
         /*events: {
             'onReady': onPlayerReady
         }*/
