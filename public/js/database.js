@@ -60,7 +60,7 @@ function displayFlags(db, map) {
         });
           google.maps.event.addListener(marker, "click", function () {
               var time = min * 60 + sec;
-              var video_link = "http://www.youtube.com/v/"
+              var video_link = "https://www.youtube.com/v/"
                   + doc.data().video_id
                   + "?version=3";
               loadVideo(video_link,time);
