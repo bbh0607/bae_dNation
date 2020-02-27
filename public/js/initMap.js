@@ -37,7 +37,7 @@ function calcFare() {
     }
   };
   // The location of Uluru
-  var klcc = { lat: 3.1579, lng: 101.712 };
+  var klcc = new google.maps.LatLng(3.1579, 101.712);//{ lat: 3.1579, lng: 101.712 };
   // The map, centered at Uluru
   var map = new google.maps.Map(document.getElementById("map"), {
     zoom: 7,
