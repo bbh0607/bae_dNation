@@ -147,6 +147,19 @@ html {
     padding-left: 0.5rem;
 }
 
+.price {
+    background-color: #35B9C5;
+    display: inline-block;
+    min-width: 60px;
+    padding: 0 7.5px;
+    font-size: 18px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
 dialog{
     padding:0px;
     border:none;
