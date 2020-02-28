@@ -131,6 +131,12 @@ html {
   width: 90px;
 }
 
+.home {
+  display: inline-block;
+  width: 150px;
+  color: #35b9c5;
+}
+
 .plan button {
     border: none;
     padding: 0px;
