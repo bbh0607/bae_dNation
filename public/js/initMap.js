@@ -71,7 +71,7 @@ function calcFare() {
       document.getElementById("vipTime").innerText = timeStr;
       document.getElementById("grabTime").innerText = timeStr;
       // Add video thumbnail to map
-      initFirestore(map);
+      initFirestore(map, start, end);
       // calcTrainFare();
     }
   });
