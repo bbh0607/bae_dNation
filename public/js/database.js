@@ -1,4 +1,4 @@
-function initFirestore(map) {
+function initFirestore(map, start, end) {
   //   console.log("AAA", coordinates);
   var firebaseConfig = {
     apiKey: "AIzaSyCNg9f1hBieClZtldbdxtM5oK-Aanx6ZCE",
@@ -12,7 +12,7 @@ function initFirestore(map) {
   };
     firebase.initializeApp(firebaseConfig);
     let db = firebase.firestore();
-    displayFlags(db, map);
+    displayFlags(db, map, start, end);
     ekspresTime(db);
     calcTrainFare();
 }
@@ -23,48 +23,73 @@ function loadVideo(link, time) {
     document.getElementById("myDialog").showModal();
 } 
 
-function displayFlags(db, map) {
+function calcDistance(lat1, lon1, lat2, lon2){
+  function toRad(x) {
+    return x * Math.PI / 180;
+  }
+
+  var R = 6371; // km
+
+  var x1 = lat2 - lat1;
+  var dLat = toRad(x1);
+  var x2 = lon2 - lon1;
+  var dLon = toRad(x2)
+  var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  var d = R * c;
+
+  return d;
+}
+
+function displayFlags(db, map, start, end) {
   db.collection("scenes")
     .get()
     .then(snapshot => {
       snapshot.forEach(doc => {
-        // console.log(doc.id, "=>", doc.data().location);
-        // TODO: Get rid of function below and load real-time thumbnails
-        let t = doc.data().time
-        console.log(doc.id,t);
-        let [min, sec] = t.split(":")
-        min = parseInt(min);
-        sec = parseInt(sec);
-        // function getRandomInt(max) {
-        //   return Math.floor(Math.random() * Math.floor(max)) + 1;
-        // }
-        // getRandomInt(2);
-        // let image =
-        //   "https://i1.ytimg.com/vi/" +
-        //   doc.data().video_id +
-        //   "/" +
-        //   getRandomInt(2) +
-        //   ".jpg";
-        // let image = doc.data().scene_img.replace("dl=0","raw=1");
-        var icon = {
-          url: doc.data().scene_img.replace("dl=0","raw=1"),
-          //scaledSize: new google.maps.Size(120, 90), // scaled size
-          origin: new google.maps.Point(0, 0), // origin
-          anchor: new google.maps.Point(0, 0) // anchor
-        };
         let coords = doc.data().location;
-        let marker = new google.maps.Marker({
-          position: { lat: coords._lat, lng: coords._long },
-          map: map,
-          icon: icon
-        });
-          google.maps.event.addListener(marker, "click", function () {
-              var time = min * 60 + sec;
-              var video_link = "https://www.youtube.com/v/"
-                  + doc.data().video_id
-                  + "?version=3";
-              loadVideo(video_link,time);
-        });
+        let distance_start = calcDistance(coords._lat, coords._long, start.lat, start.lng);
+        let distance_end = calcDistance(coords._lat, coords._long, end.lat, end.lng);
+        if(distance_start < 5 || distance_end < 5){
+          // console.log(doc.id, "=>", doc.data().location);
+          // TODO: Get rid of function below and load real-time thumbnails
+          let t = doc.data().time
+          console.log(doc.id,t);
+          let [min, sec] = t.split(":")
+          min = parseInt(min);
+          sec = parseInt(sec);
+          // function getRandomInt(max) {
+          //   return Math.floor(Math.random() * Math.floor(max)) + 1;
+          // }
+          // getRandomInt(2);
+          // let image =
+          //   "https://i1.ytimg.com/vi/" +
+          //   doc.data().video_id +
+          //   "/" +
+          //   getRandomInt(2) +
+          //   ".jpg";
+          // let image = doc.data().scene_img.replace("dl=0","raw=1");
+          var icon = {
+            url: doc.data().scene_img.replace("dl=0","raw=1"),
+            //scaledSize: new google.maps.Size(120, 90), // scaled size
+            origin: new google.maps.Point(0, 0), // origin
+            anchor: new google.maps.Point(0, 0) // anchor
+          };
+          //let coords = doc.data().location;
+          let marker = new google.maps.Marker({
+            position: { lat: coords._lat, lng: coords._long },
+            map: map,
+            icon: icon
+          });
+            google.maps.event.addListener(marker, "click", function () {
+                var time = min * 60 + sec;
+                var video_link = "https://www.youtube.com/v/"
+                    + doc.data().video_id
+                    + "?version=3";
+                loadVideo(video_link,time);
+          });
+        }
       });
     })
     .catch(err => {
